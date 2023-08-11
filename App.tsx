@@ -7,13 +7,18 @@ import { Routes } from './src/routes';
 
 import { THEME } from './src/theme';
 import { Loading } from './src/components/Loading';
+import { tagUserEmailCreate } from './src/notifications/notificationsTags';
 
 import { CartContextProvider } from './src/contexts/CartContext';
 
 OneSignal.setAppId('15b635aa-1c82-4b15-b4d1-2ca3d805ef61')
 
+OneSignal.setEmail('mateus@email.com')
+
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
+
+  tagUserEmailCreate('mateus_carvalho@email.com')
 
   return (
     <NativeBaseProvider theme={THEME}>
