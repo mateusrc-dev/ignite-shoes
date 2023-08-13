@@ -11,7 +11,6 @@ import { Routes } from "./src/routes";
 
 import { THEME } from "./src/theme";
 import { Loading } from "./src/components/Loading";
-import { tagUserInfoCreate } from "./src/notifications/notificationsTags";
 
 import { CartContextProvider } from "./src/contexts/CartContext";
 import { useEffect } from "react";
@@ -22,8 +21,6 @@ OneSignal.setEmail("mateus@email.com");
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
-
-  tagUserInfoCreate();
 
   useEffect(() => {
     const unsubscribe = OneSignal.setNotificationOpenedHandler((response) => {
